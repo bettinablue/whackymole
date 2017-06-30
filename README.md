@@ -1,8 +1,11 @@
-This is an adoption of the Whack a Mole arcade game using HTC Vive + VRTK and using artwork and some game design from Mammoth Interactive.  
+This is an adoption of the Whack a Mole arcade game using HTC Vive + VRTK and using 3D artwork and base game design from Mammoth Interactive.  
 
 
 The artwork and initial design of this Whack-A-Mole type game were created by Mammoth Interactive for their Udemy course:
 http://mammothinteractive.com/
+Special Thanks to the Udemy Tutorial creators, Glauco Pires and Kevin Liao from Mammoth Interactive. 
+-- Glauco Pires: Game Development
+-- Kevin Liao: 3D art
 
 https://www.udemy.com/build-30-mini-virtual-reality-games-in-unity-3d-from-scratch/learn/v4/overview
 

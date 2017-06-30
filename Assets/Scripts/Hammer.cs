@@ -42,6 +42,8 @@ public class Hammer : VRTK_InteractableObject
 			collisionForce = VRTK_DeviceFinder.GetControllerVelocity(controllerReference).magnitude * impactMagnifier;
 			var hapticStrength = collisionForce / maxCollisionForce;
 			VRTK_ControllerHaptics.TriggerHapticPulse(controllerReference, hapticStrength, 0.4f, 0.01f);
+			AudioSource audio = GetComponent<AudioSource> ();
+			audio.Play ();
 		}
 		else
 		{
