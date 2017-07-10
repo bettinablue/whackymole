@@ -7,6 +7,7 @@ public class Mole : MonoBehaviour {
 	public float hiddenHeight = -0.3f;
 	public float speed = 4f;
 	public float disappearDuration = 0.5f;
+	public bool hasBeenHit = false;
 
 	private Vector3 targetPosition;
 	private float disappearTimer = 0f;
@@ -33,6 +34,7 @@ public class Mole : MonoBehaviour {
 	}
 
 	public void Rise () {
+		hasBeenHit = false;
 		targetPosition = new Vector3 (
 			transform.localPosition.x,
 			visibleHeight,
@@ -51,6 +53,12 @@ public class Mole : MonoBehaviour {
 	}
 
 	public void OnHit () {
+		hasBeenHit = true;
 		Hide ();
+	}
+
+	/** Used to prevent double hitting updating score */
+	public bool hasJustBeenHit(){
+		return hasBeenHit;
 	}
 }

@@ -20,10 +20,11 @@ public class CollisionDetector : MonoBehaviour {
 		Debug.Log ("Mole was Hit by Something.....transform=" + collision.transform.name + ", collider=" + collision.collider.name);
 		if (collision.collider.GetComponent<Hammer>() != null){
 			Debug.Log ("Mole was hit by HAMMER!!!!!");
-			Mole mole = FindObjectOfType<Mole> ();
-			mole.Hide ();
-			player.score++;
+			Mole mole = GetComponent<Mole> ();
+			if(!mole.hasJustBeenHit()){
+				player.score++;	
+			}
+			mole.OnHit();
 		}
-
 	}
 }

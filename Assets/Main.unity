@@ -490,6 +490,7 @@ MonoBehaviour:
   hiddenHeight: -2.65
   speed: 4
   disappearDuration: 0.5
+  hasBeenHit: 0
 --- !u!136 &69388705
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -790,6 +791,7 @@ MonoBehaviour:
   hiddenHeight: -2.65
   speed: 4
   disappearDuration: 0.5
+  hasBeenHit: 0
 --- !u!136 &337418866
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -987,6 +989,7 @@ MonoBehaviour:
   hiddenHeight: -2.65
   speed: 4
   disappearDuration: 0.5
+  hasBeenHit: 0
 --- !u!136 &510487508
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1138,6 +1141,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013993042060, guid: bbfdcdbed9f98694b95b6ca9ef6e4a72,
+        type: 2}
+      propertyPath: hasBeenHit
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bbfdcdbed9f98694b95b6ca9ef6e4a72, type: 2}
   m_IsPrefabParent: 0
@@ -1260,6 +1268,7 @@ MonoBehaviour:
   hiddenHeight: -2.65
   speed: 4
   disappearDuration: 0.5
+  hasBeenHit: 1
 --- !u!136 &630282426
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2394,6 +2403,7 @@ MonoBehaviour:
   hiddenHeight: -2.65
   speed: 4
   disappearDuration: 0.5
+  hasBeenHit: 0
 --- !u!136 &1437400006
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2470,6 +2480,7 @@ MonoBehaviour:
   hiddenHeight: -2.65
   speed: 4
   disappearDuration: 0.5
+  hasBeenHit: 0
 --- !u!136 &1464339147
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2777,6 +2788,7 @@ MonoBehaviour:
   hiddenHeight: -2.65
   speed: 4
   disappearDuration: 0.5
+  hasBeenHit: 0
 --- !u!136 &1939001271
 CapsuleCollider:
   m_ObjectHideFlags: 0
