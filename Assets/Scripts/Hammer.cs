@@ -19,6 +19,8 @@ public class Hammer : VRTK_InteractableObject
 	{
 		base.Grabbed(grabbingObject);
 		controllerReference = VRTK_ControllerReference.GetControllerReference(grabbingObject.controllerEvents.gameObject);
+		GameController gameController = FindObjectOfType<GameController> ();
+		gameController.startGame ();
 	}
 
 	public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)

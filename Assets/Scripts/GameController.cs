@@ -16,38 +16,47 @@ public class GameController : MonoBehaviour {
 	private Mole[] moles;
 	private float spawnTimer = 0f;
 	private float resetTimer = 3f;
+	private bool isGameStarted = false;
+
+	public void startGame() {
+		isGameStarted = true;
+	}
 
 	// Use this for initialization
 	void Start () {
 		moles = moleContainer.GetComponentsInChildren<Mole> ();
+		infoText.text = "Hit all the moles!\nGrab Hammer to start";
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		gameTimer -= Time.deltaTime;
 
-		if (gameTimer > 0f) {
-			infoText.text = "Hit all the moles!\nTime: " + Mathf.Floor (gameTimer) + "\nScore: " + player.score;
+		if(isGameStarted){
+			gameTimer -= Time.deltaTime;
 
-			spawnTimer -= Time.deltaTime;
-			if (spawnTimer <= 0f) {
-				moles [Random.Range (0, moles.Length)].Rise ();
+			if (gameTimer > 0f) {
+				infoText.text = "Hit all the moles!\nTime: " + Mathf.Floor (gameTimer) + "\nScore: " + player.score;
 
-				spawnDuration -= spawnDecrement;
-				if (spawnDuration < minimumSpawnDuration) {
-					spawnDuration = minimumSpawnDuration;
+				spawnTimer -= Time.deltaTime;
+				if (spawnTimer <= 0f) {
+					moles [Random.Range (0, moles.Length)].Rise ();
+
+					spawnDuration -= spawnDecrement;
+					if (spawnDuration < minimumSpawnDuration) {
+						spawnDuration = minimumSpawnDuration;
+					}
+
+					spawnTimer = spawnDuration;
 				}
+			} else {
+				infoText.text = "Game over! Your score: " + Mathf.Floor (player.score);
 
-				spawnTimer = spawnDuration;
-			}
-		} else {
-			infoText.text = "Game over! Your score: " + Mathf.Floor (player.score);
-
-			resetTimer -= Time.deltaTime;
-			if (resetTimer <= 0f) {
-				VRTK_SDKManager.instance.UnloadSDKSetup();
-				SceneManager.LoadScene (SceneManager.GetActiveScene().name);
-			}
+				resetTimer -= Time.deltaTime;
+				if (resetTimer <= 0f) {
+					VRTK_SDKManager.instance.UnloadSDKSetup();
+					SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+				}
+			}	
 		}
-	}
+	}//end update
 }
